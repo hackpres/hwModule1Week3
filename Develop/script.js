@@ -6,7 +6,12 @@ function generatePassword() {
 
   //prompt the user for password criteria
     //length 8-128
+  passwordLength = prompt("How long would you like for your password to be?");
     //include lowercase, uppercase, numeric, special characters?
+  passwordLowercase = confirm("Would you like for your password to include lowercase letters?");
+  passwordUppercase = confirm("Would you like for your password to include uppercase letters?");
+  passwordNumbers = confirm("Would you like for your password to include numbers?");
+  passwordSpecial = confirm("Would you like for your password to include special characters?");
   //validate the input
   //generate password
 

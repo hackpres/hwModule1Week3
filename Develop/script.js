@@ -3,9 +3,14 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
+  // Calls the function of generatePassword and assigns the returned value to the variable password.
+  // IMPORTANT: the function of generatePassword is being called here but it doesnt yet exist
   var password = generatePassword();
+  // assigns the html id="password" to the variable passwordText.
   var passwordText = document.querySelector("#password");
 
+  // assigns the value of passwordText (the html location of id=password) and gives it the value of the function generatePassword()
+  // in other words this is what actually displays the text of the generated password in the password box on the card.
   passwordText.value = password;
 
 }

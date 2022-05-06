@@ -13,6 +13,9 @@ function generatePassword() {
   passwordNumbers = confirm("Would you like for your password to include numbers?");
   passwordSpecial = confirm("Would you like for your password to include special characters?");
   //validate the input
+  while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
+    passwordLength = parseInt(prompt("please type a number between 8-128."));
+  }
   //generate password
 
 

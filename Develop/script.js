@@ -2,6 +2,7 @@
 var generateBtn = document.querySelector("#generate");
 
 function generatePassword() {
+  //console logs confirmation that the generate password button was clicked
   console.log("The button has been clicked");
 
   //prompt the user for password criteria
@@ -12,9 +13,10 @@ function generatePassword() {
   passwordUppercase = confirm("Would you like for your password to include uppercase letters?");
   passwordNumbers = confirm("Would you like for your password to include numbers?");
   passwordSpecial = confirm("Would you like for your password to include special characters?");
-  //validate the input
+  //validates the input for password length. If it is less than 8, greater than 128, or not a number follow the next line
   while (passwordLength < 8 || passwordLength > 128 || isNaN(passwordLength)) {
-    passwordLength = parseInt(prompt("please type a number between 8-128."));
+    //if the while loop returns true, prompt "please type a number between 8-128."
+    passwordLength = prompt("please type a number between 8-128.");
   }
   //add charCodes from ASCii Table to their respective lower, upper, number, special variables.
   const uppercase_codes = arrayFromLowToHigh(65, 90);
@@ -59,6 +61,7 @@ function generatePassword() {
     //this line pushes the array of passwordCharacters into a string using the .fromCharCode so that we are left with a string of characters rather than an array of those characters codes.
     passwordCharacters.push(String.fromCharCode(characterCode));
   }
+  console.log(passwordCharacters);
   //returns the passwordCharacters string out of the generatePassword execution context while joining the individual characters into a single string.
   return passwordCharacters.join("");
 }
